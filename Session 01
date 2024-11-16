@@ -1,0 +1,44 @@
+# Task 0: Na hodině jsme se naučili pracovat s interaktivní Python konzolí. Zkus pomocí Pythonu vypočítat: 3+(4+6)×8÷2−1 =
+print(3+(4+6)*8//2-1)
+42
+print(3+(4+6)*8/2-1)
+42.0
+
+# Task 1: Jsou i jiné operátory než +, - a ty pro násobení a dělení. Co dělá s čísly operátor % (procento)?
+Je to tzv. modulo, zbytek po dělení.
+
+# Task 2: A co dělá operátor ** (dvě hvězdičky)?
+umocňuje
+
+# Task 3: Jaký je v Pythonu rozdíl mezi dělením pomocí / a //? (Zkus si v Pythonu a odpověz slovně)
+/ je běžné dělení, tzn. vyjde mi desetinné číslo - float
+// je celočíselné dělení, tzn. vyjde mi celé číslo - integer
+
+# Task 4: Řetězce jdou spojovat sčítáním. Například:
+>>> 'A' + "B"
+'AB'
+Poznáš, co je tady špatně? Jak bys to spravila?
+>>> 'Ahoj' + 'PyLadies!'
+
+Chybí tam mezera, takže ji tam musím dodat. 
+Buď dám mezeru za 'Ahoj ' nebo mezeru vyrobím pomocí uvozovek " "
+
+# Task 5: Řetězce se dají sčítat. Dají se i násobit? Dělit? Odečítat? (Odpověz slovně)
+
+Stringy se násobit nedají, ale * znamená opakování - třeba 
+print("Eliska" * 10) mi vrátí
+EliskaEliskaEliskaEliskaEliskaEliskaEliskaEliskaEliskaEliska
+Stringy se dělit a odečítat nedají.
+
+# Task 6: Co se stane, když se pokusím sečíst číslo a řetězec? (Můžeš vložit výsledek z konzole, ale odpověz i slovně)
+
+Vyhodí mi to TypeError: can only concatenate str (not "int") to str
+Nemůžu tedy sčítat číslo a řetězec, jen číslo a číslo
+
+# Task 7: A vynásobit? (Můžeš vložit výsledek z konzole, ale odpověz i slovně)
+Ano, to jde - jako ve cvičení 5
+ "Neděle" * 5
+'NeděleNeděleNeděleNeděleNeděle'
+
+ 
+
