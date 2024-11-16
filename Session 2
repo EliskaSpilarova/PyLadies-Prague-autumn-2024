@@ -1,0 +1,168 @@
+PROMĚNNÉ A PODMÍNKY
+
+# Task 0: Jak se jmenuje druh chyby, která nastane, když…
+Dáš uvozovky jen na jednu stranu řetězce?
+Zkusíš odečíst číslo od řetězce?
+Dělíš nulou?
+Použiješ proměnnou, která neexistuje?
+Stiskneš Ctrl+C, když se program ptá na vstup (pomocí input)?
+Odsadíš příkaz bez předchozího if:?
+Po if: odsadíš jeden příkaz o čtyři mezery a druhý jen o dvě?
+Neuzavřeš závorku?
+Zkusíš použít vykřičník (!) jako operátor?
+Napíšeš v příkazu print(1, 2, 3) čárku navíc? Např. print(1,2,,3)?
+Zkusíš porovnat řetězec a číslo, např. 2 >"3"?
+
+1. SyntaxError
+2. TypeError
+3. ZeroDivisionError
+4. NameError
+5. KeyboardInterrupt
+6. IndentationError
+7. IndentationError
+8. SyntaxError
+9. SytaxError
+10. SyntaxError
+11. TypeError
+
+# Task 1: Napiš program, který spočítá povrch a objem krychle o straně 2852 cm.
+Abys nemusela tolik hledat v učebnici (vlastně Wikipedii): povrch S = 6a², objem V = a³
+Řešení, pro kontrolu: S = 48803424 cm², V = 23197894208 cm³
+
+strana = 2852
+povrch = 6 * strana**2
+objem = strana **3
+
+print("Povrch krychle je", povrch, "cm3")
+print("Objem krychle je", objem, "cm3")
+
+# Task 2: Změň program tak, aby délku strany mohl zadat uživatel.
+
+strana = int(input("Zadej délku strany: "))
+povrch = 6 * strana**2
+objem = strana **3
+
+print("Povrch krychle je", povrch, "cm3")
+print("Objem krychle je", objem, "cm3")
+
+# Task 3: Představ si, že napíšeš následující kód do interaktivního Pythonu:
+
+>>> pocet_jablek = 10
+>>> pocet_hrusek = 20
+>>> vice_jablek = pocet_jablek > pocet_hrusek
+
+>>> barva_jablek = "cervena"
+>>> jablka_cervena = barva_jablek == "cervena"
+
+>>> jablka_v_lednici = True
+>>> hrusky_v_lednici = False
+
+>>> ovoce_v_lednici = jablka_v_lednici or hrusky_v_lednici
+Jakou hodnotu budou mít proměnné vice_jablek, jablka_cervena a ovoce_v_lednici po spustění kódu výše?
+
+vice_jablek = False
+jablka_cervena = True
+ovoce_v_lednici = True
+
+# Task 4: A teď trochu kreativity. Napiš program, který po zadání správného hesla vypíše nějakou tajnou informaci.
+
+heslo = input("Zadej heslo: ")
+
+if heslo == "Tajné heslo":
+    print("V pátek jsem viděla černého havrana.")
+else:
+    print("Smolíček.")
+
+# Task 5: Na srazu jsme měli program, který píše různé nesmysly podle uživatelem zadaného věku. 
+Zkus napsat program, který píše hlášky podle zadané rychlosti chůze, váhy ulovené ryby, počtu tykadel, teploty vody nebo třeba vzdálenosti od rovníku.
+
+vek = int(input("Zadej tvůj věk: "))
+vaha = int(input("Zadej svou váhu: "))
+
+if vek < vaha:
+    print("Tvůj věk je menší než váha - hrůza!")
+else:
+    print("Vše v pořádku.")
+
+# Task 6: Zkus napsat hru Kámen, nůžky, papír. Jak na to:
+
+Vytvoř si dvě proměnné, tah_cloveka a tah_pocitace
+Nastav tah_pocitace na "kámen", na tah_cloveka se uživatele zeptej
+Vypiš výsledky hry dle tahu člověka - buď 'Plichta.', 'Počítač vyhrál.' nebo 'Vyhrála jsi!'. Vyhodnocení výsledku hry naprogramuj tak, jako by počítač mohl náhodně losovat ze všech tří variant
+- naučíš ho to v příští lekci.
+
+tah_pocitace = "kámen" 
+tah_cloveka = str(input("Zadej svůj tah: "))
+
+if tah_cloveka == "kámen":
+    print("Plichta")
+elif tah_cloveka == "nůžky":
+    print("Počítač vyhrál")
+elif tah_cloveka == "papír":
+    print("Vyhrála jsi!")
+
+tah_pocitace = "nůžky"
+tah_cloveka = str(input("Zadej svůj tah: "))
+
+if tah_cloveka == "kámen":
+    print("Vyhrála jsi!")
+elif tah_cloveka == "nůžky":
+    print("Plichta")
+elif tah_cloveka == "papír":
+    print("Počítač vyhrál")
+
+tah_pocitace = "papír"
+tah_cloveka = str(input("Zadej svůj tah: "))
+
+if tah_cloveka == "kámen":
+    print("Počítač vyhrál")
+elif tah_cloveka == "nůžky":
+    print("Vyhrála jsi!")
+elif tah_cloveka == "papír":
+    print("Plichta")
+
+# Task 7: Zkus přepsat hru Kámen, nůžky, papír z předchozího úkolu pomocí and a or.
+Dokážeš docílit toho, aby se každý z řetězců 'Plichta.', 'Počítač vyhrál.' a 'Vyhrála jsi!' objevil v programu jen jednou, aniž bys tyhle řetězce musela přiřazovat do proměnných?
+
+
+# První kolo
+tah_pocitace = "kámen"
+tah_cloveka = input("Zadej svůj tah (kámen, nůžky, papír): ")
+
+if tah_cloveka == tah_pocitace:
+    print("Plichta.")
+elif (tah_cloveka == "kámen" and tah_pocitace == "nůžky") or \
+     (tah_cloveka == "nůžky" and tah_pocitace == "papír") or \
+     (tah_cloveka == "papír" and tah_pocitace == "kámen"):
+    print("Vyhrála jsi!")
+else:
+    print("Počítač vyhrál.")
+
+# Druhé kolo
+tah_pocitace = "nůžky"
+tah_cloveka = input("Zadej svůj tah (kámen, nůžky, papír): ")
+
+if tah_cloveka == tah_pocitace:
+    print("Plichta.")
+elif (tah_cloveka == "kámen" and tah_pocitace == "nůžky") or \
+     (tah_cloveka == "nůžky" and tah_pocitace == "papír") or \
+     (tah_cloveka == "papír" and tah_pocitace == "kámen"):
+    print("Vyhrála jsi!")
+else:
+    print("Počítač vyhrál.")
+
+# Třetí kolo
+tah_pocitace = "papír"
+tah_cloveka = input("Zadej svůj tah (kámen, nůžky, papír): ")
+
+if tah_cloveka == tah_pocitace:
+    print("Plichta.")
+elif (tah_cloveka == "kámen" and tah_pocitace == "nůžky") or \
+     (tah_cloveka == "nůžky" and tah_pocitace == "papír") or \
+     (tah_cloveka == "papír" and tah_pocitace == "kámen"):
+    print("Vyhrála jsi!")
+else:
+    print("Počítač vyhrál.")
+
+
+ 
